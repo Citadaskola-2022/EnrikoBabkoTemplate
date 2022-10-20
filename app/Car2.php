@@ -34,9 +34,4 @@ class Car
     {
         echo "Car $this->number_plate Destroyed </br>" . PHP_EOL;
     }
-
-    public function getDriver()
-    {
-
-    }
 }
