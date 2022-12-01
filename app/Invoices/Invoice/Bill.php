@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Public\Invoices\Invoice;
+namespace App\Invoices\Invoice;
 
 class Bill
 {

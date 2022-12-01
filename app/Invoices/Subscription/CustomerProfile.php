@@ -1,6 +1,6 @@
 <?php
 
-namespace Public\Invoices\Subscription;
+namespace App\Invoices\Subscription;
 
 class CustomerProfile
 {

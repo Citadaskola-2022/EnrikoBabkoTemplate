@@ -2,82 +2,22 @@
 
 declare(strict_types=1);
 
-
-use App\ServiceExpenses;
 require __DIR__ . '/../bootstrap/app.php';
 
+//Polymorphism
 
-/** @var \App\Form\Field[] $fields */
-$fields = [
-    new \App\Form\Text('text_field'),
-    new \App\Form\Checkbox('checkbox_field'),
-    new \App\Form\Radio('radio_field'),
+//Cilvēks, kas aizņēmis naudu
+//aizdevēji (aģentūra, uzņēmums, banka) kas piedzen naudu no parādniekiem.
 
-];
+$collector = new \App\DebtCollection\Agency();
+$collectedAmount = $collector->collect(100);
+var_dump($collectedAmount);
 
-foreach($fields as $field)
-    {
-        echo $field -> render();
-    }
+$collector = new \App\DebtCollection\Rocky();
+$collectedAmount = $collector->collect(100);
+var_dump($collectedAmount);
 
-use Doctrine\Inflector\InflectorFactory;
-use Ramsey\Uuid\Uuid;
+$service = new App\DebtCollection\Service();
+$collectedAmount = $service->collectDebt($collector);
 
-$inflector = InflectorFactory::create()->build();
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
-
-//echo '<pre>';
-var_dump($_ENV['DB_ROOT']);
-var_dump($_ENV['DB_PASSWORD']);
-
-$name = 'apple';
-printf(
-    'vienskaitlis: %s, daudzskaitlis: %s',
-    $name, $inflector->pluralize($name)
-);
-echo '<br>';
-
-$name = 'Get out of my website';
-printf(
-    'title: %s, url: %s',
-    $name, $inflector->urlize($name)
-);
-echo '<br>';
-
-$uuid = Uuid::uuid4();
-
-printf(
-    "UUID: %s\nVersion: %d\n",
-    $uuid->toString(),
-    $uuid->getFields()->getVersion()
-);
-
-$transaction = new ServiceExpenses(30);
-
-$transaction->process();
-
-$coffee = new \App\Coffee\CoffeeWithMilk();
-
-$coffee -> prepare(30);
-$coffee -> prepare(40);
-$coffee -> prepare(30);
-$coffee -> prepare(30);
-
-makeCoffee($coffee);
-
-$coffee -> brew();
-
-$iced = new \App\Coffee\IcedCoffee($coffee);
-$iced->prepare(50);
-$iced -> addIce(5);
-$iced -> brew();
-
-function makeCoffee(\App\Coffee\Coffee $coffee): void{
-    if($coffee instanceof \App\Coffee\CoffeeWithMilk)
-    {
-        $coffee->addMilk();
-    }
-}
 
