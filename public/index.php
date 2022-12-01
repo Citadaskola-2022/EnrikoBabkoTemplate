@@ -16,7 +16,7 @@ makeCoffee($coffee);
 $coffee -> brew();
 
 $iced = new \App\Coffee\IcedCoffee($coffee);
-$iced -> prepare(50);
+$iced->prepare(50);
 $iced -> addIce(5);
 $iced -> brew();
 
