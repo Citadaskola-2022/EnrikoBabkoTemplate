@@ -1,3 +1,4 @@
+
 <?php
 declare(strict_types=1);
 
@@ -35,3 +36,4 @@ class Car
         echo "Car $this->number_plate Destroyed </br>" . PHP_EOL;
     }
 }
+
