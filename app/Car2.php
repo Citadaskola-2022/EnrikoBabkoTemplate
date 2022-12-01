@@ -1,5 +1,8 @@
+
 <?php
 declare(strict_types=1);
+
+use App\Driver;
 
 class Car
 {
@@ -32,9 +35,5 @@ class Car
     {
         echo "Car $this->number_plate Destroyed </br>" . PHP_EOL;
     }
-
-    public function getDriver()
-    {
-
-    }
 }
+
