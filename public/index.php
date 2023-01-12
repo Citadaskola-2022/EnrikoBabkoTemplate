@@ -1,23 +1,13 @@
-<?php
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
 
-declare(strict_types=1);
-
-require __DIR__ . '/../bootstrap/app.php';
-
-//Polymorphism
-
-//Cilvēks, kas aizņēmis naudu
-//aizdevēji (aģentūra, uzņēmums, banka) kas piedzen naudu no parādniekiem.
-
-$collector = new \App\DebtCollection\Agency();
-$collectedAmount = $collector->collect(100);
-var_dump($collectedAmount);
-
-$collector = new \App\DebtCollection\Rocky();
-$collectedAmount = $collector->collect(100);
-var_dump($collectedAmount);
-
-$service = new App\DebtCollection\Service();
-$collectedAmount = $service->collectDebt($collector);
-
-
+</body>
+</html>

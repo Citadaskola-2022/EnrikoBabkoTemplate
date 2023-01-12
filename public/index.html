@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <title>Programmēšana 2 || Frontend</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .red-text {
+            color: red;
+        }
+        .green-text {
+            color: green;
+        }
+    </style>
+</head>
+<body class="bg-gray-800 text-white h-full grid place-items-center">
+<!--    <h2>Users</h2>-->
+<!--    <ul>-->
+<!--        <li>John Doe</li>-->
+<!--        <li>Jane Doe</li>-->
+<!--        <li>Ben Dover</li>-->
+<!--    </ul>-->
+
+    <div id="app">
+        <p>{{ message }} {{ message.length }}</p>
+
+        <input
+                class = "bg-gray-500"
+                v-model="message"/>
+        <br>
+        <button
+                :class="active ? 'text-green-500' : 'text-red-500'"
+                @:click="toggle">
+            Click me
+        </button>
+    </div>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    message: 'Hello world!',
+                    active: false,
+                }
+            },
+            mounted() {
+
+            },
+            methods: {
+                toggle() {
+                    this.active = !this.active;
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
