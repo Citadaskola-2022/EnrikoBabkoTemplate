@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Episode 4:First Vue Component</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-full grid place-items-center">
+    <div id="app">
+    <customized-button>I dare you to do it</customized-button>
+    </div>
+    <script>
+        let app = {
+            components: {
+                'customized-button': {
+                    template:`
+                    <button class="bg-green-200 px-4 py-3 disabled:cursor-not-allowed" :disabled="processing"
+                    style="color:DarkBlue">
+                        <slot />
+                    </button>
+                    `,
+
+                    data() {
+                        return {
+                            processing: false
+                        };
+                    }
+                },
+            }
+        };
+
+        Vue.createApp(app).mount('#app');
+    </script>
+</body>
+</html>
