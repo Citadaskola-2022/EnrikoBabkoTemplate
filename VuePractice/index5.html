@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Episode 5</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-full grid place-items-center">
+    <div id="app">
+        <customized-button>I dare you to do it</customized-button>
+    </div>
+
+    <script type="module">
+        import CustomizedButton from "./Components/CustomizedButton.js";
+        let app = {
+            components: {
+                'customized-button': CustomizedButton
+            }
+        };
+
+    Vue.createApp(app).mount('#app');
+    </script>
+</body>
+</html>
