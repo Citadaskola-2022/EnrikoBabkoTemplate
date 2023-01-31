@@ -33,7 +33,7 @@ export default {
                        border-black border-2
                        placeholder:text-gray-500"/>
             </p>
-            <button @click="saved()" class="bg-blue-400 px-2 py-2 rounded-lg">
+            <button @click="saved" class="bg-blue-400 px-2 py-2 rounded-lg">
                 Saglabāt
             </button>
             </form>
@@ -43,5 +43,16 @@ export default {
         form: {
             type: Object
         },
+    },
+
+    methods: {
+        saved() {
+            const savedObject = {
+                type:form.type,
+                model:form.model,
+                price:form.price
+            };
+        }
     }
+
 }

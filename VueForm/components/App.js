@@ -9,8 +9,7 @@ export default {
         <Myform :form="form">   
         </Myform>
         <Output :form="form">
-            
-         </Output>
+        </Output>
     `,
 
     data() {
