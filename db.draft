@@ -1,0 +1,18 @@
+table: vehicle
+- id (INT + PRIMARY)
+- number (piem: HB-2346)
+- type (piem: light_car, motorcycle, boat)
+- driver_id (piem: 1235)
+- fuel_type
+- updated_at INDEX
+
+table: vehicle_info
+- vehicle_id PRIMARY
+- name PRIMARY (seats, doors, steering_wheel_side)
+- value (piem: 7, 5, left)
+
+table: driver
+- id (INT + PRIMARY)
+- name (TEXT)
+- surname (TEXT)
+
