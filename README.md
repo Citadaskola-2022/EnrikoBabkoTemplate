@@ -11,6 +11,6 @@ This is a base structure for the project.
 
 ### Initial run
 ```bash
-cp .env.example .env
+cp .env .env
 docker compose up -d
 ```
