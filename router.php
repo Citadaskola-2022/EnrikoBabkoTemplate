@@ -10,6 +10,7 @@ $routes = [
     '/register' => 'controllers/users/register.php',
     '/logout' => 'controllers/users/logout.php',
     '/posts' => 'controllers/posts/index.php',
+    '/exit' => 'controllers/exit.php'
 ];
 
 if (array_key_exists($uri, $routes)) {
